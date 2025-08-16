@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+
+    <!-- 顶部游戏信息 -->
+    <LinearLayout
+        android:id="@+id/ll_game_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@color/primary_color">
+
+        <TextView
+            android:id="@+id/tv_game_phase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="游戏阶段: 翻牌前"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_pot"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="底池: 0"
+                android:textSize="14sp"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_current_bet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="当前下注: 0"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:gravity="end" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_current_player"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="当前玩家: 等待中"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+
+    <!-- 公共牌区域 -->
+    <LinearLayout
+        android:id="@+id/ll_community_cards"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_game_info"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="@drawable/bg_community_cards">
+
+        <com.example.texasholdem.views.CardView
+            android:id="@+id/card_community_1"
+            android:layout_width="80dp"
+            android:layout_height="120dp"
+            android:layout_margin="4dp" />
+
+        <com.example.texasholdem.views.CardView
+            android:id="@+id/card_community_2"
+            android:layout_width="80dp"
+            android:layout_height="120dp"
+            android:layout_margin="4dp" />
+
+        <com.example.texasholdem.views.CardView
+            android:id="@+id/card_community_3"
+            android:layout_width="80dp"
+            android:layout_height="120dp"
+            android:layout_margin="4dp" />
+
+        <com.example.texasholdem.views.CardView
+            android:id="@+id/card_community_4"
+            android:layout_width="80dp"
+            android:layout_height="120dp"
+            android:layout_margin="4dp" />
+
+        <com.example.texasholdem.views.CardView
+            android:id="@+id/card_community_5"
+            android:layout_width="80dp"
+            android:layout_height="120dp"
+            android:layout_margin="4dp" />
+
+    </LinearLayout>
+
+    <!-- 玩家区域 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ll_community_cards"
+        android:layout_above="@id/ll_action_buttons"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 玩家1-4 (上方) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <com.example.texasholdem.views.PlayerView
+                    android:id="@+id/player_1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp" />
+
+                <com.example.texasholdem.views.PlayerView
+                    android:id="@+id/player_2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <com.example.texasholdem.views.PlayerView
+                    android:id="@+id/player_3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp" />
+
+                <com.example.texasholdem.views.PlayerView
+                    android:id="@+id/player_4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp" />
+
+            </LinearLayout>
+
+            <!-- 玩家5-8 (下方) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <com.example.texasholdem.views.PlayerView
+                    android:id="@+id/player_5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp" />
+
+                <com.example.texasholdem.views.PlayerView
+                    android:id="@+id/player_6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.example.texasholdem.views.PlayerView
+                    android:id="@+id/player_7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp" />
+
+                <com.example.texasholdem.views.PlayerView
+                    android:id="@+id/player_8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- 底部操作按钮 -->
+    <LinearLayout
+        android:id="@+id/ll_action_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_fold"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:text="@string/btn_fold"
+                android:textSize="14sp"
+                app:cornerRadius="8dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_call"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:text="@string/btn_call"
+                android:textSize="14sp"
+                app:cornerRadius="8dp"
+                style="@style/Widget.MaterialComponents.Button" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_raise"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:text="@string/btn_raise"
+                android:textSize="14sp"
+                app:cornerRadius="8dp"
+                style="@style/Widget.MaterialComponents.Button" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_all_in"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:text="@string/btn_all_in"
+                android:textSize="14sp"
+                app:cornerRadius="8dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_leave_game"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/btn_leave_game"
+            android:textSize="14sp"
+            app:cornerRadius="8dp"
+            style="@style/Widget.MaterialComponents.Button.TextButton" />
+
+    </LinearLayout>
+
+</RelativeLayout> 

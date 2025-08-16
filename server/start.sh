@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "启动德州扑克服务器..."
+echo ""
+echo "正在安装依赖..."
+npm install
+echo ""
+echo "启动服务器..."
+npm start 

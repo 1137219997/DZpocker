@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">德州扑克</string>
+    
+    <!-- 主界面 -->
+    <string name="app_title">德州扑克</string>
+    <string name="app_logo">应用图标</string>
+    <string name="app_description">经典德州扑克游戏\n支持多人实时对战\n体验紧张刺激的扑克竞技</string>
+    <string name="hint_player_name">请输入玩家名称</string>
+    <string name="hint_room_id">请输入房间ID</string>
+    <string name="btn_join_room">加入房间</string>
+    <string name="btn_create_room">创建房间</string>
+    
+    <!-- 房间界面 -->
+    <string name="players_list">玩家列表</string>
+    <string name="btn_start_game">开始游戏</string>
+    <string name="btn_leave_room">离开房间</string>
+    
+    <!-- 游戏界面 -->
+    <string name="btn_fold">弃牌</string>
+    <string name="btn_call">跟注</string>
+    <string name="btn_raise">加注</string>
+    <string name="btn_all_in">全下</string>
+    <string name="btn_leave_game">离开游戏</string>
+    
+    <!-- 玩家信息 -->
+    <string name="player_avatar">玩家头像</string>
+    
+    <!-- 游戏状态 -->
+    <string name="game_phase_waiting">等待玩家</string>
+    <string name="game_phase_preflop">翻牌前</string>
+    <string name="game_phase_flop">翻牌</string>
+    <string name="game_phase_turn">转牌</string>
+    <string name="game_phase_river">河牌</string>
+    <string name="game_phase_showdown">摊牌</string>
+    
+    <!-- 玩家状态 -->
+    <string name="player_status_waiting">等待中</string>
+    <string name="player_status_folded">已弃牌</string>
+    <string name="player_status_all_in">全下</string>
+    <string name="player_status_betting">下注中</string>
+    
+    <!-- 提示信息 -->
+    <string name="toast_connected">已连接到服务器</string>
+    <string name="toast_disconnected">与服务器断开连接</string>
+    <string name="toast_join_room_success">成功加入房间</string>
+    <string name="toast_join_room_failed">加入房间失败</string>
+    <string name="toast_player_joined">加入了房间</string>
+    <string name="toast_player_left">离开了房间</string>
+    <string name="toast_game_started">游戏开始！</string>
+    <string name="toast_connection_failed">连接服务器失败</string>
+    
+    <!-- 错误信息 -->
+    <string name="error_socket_init">Socket初始化失败</string>
+    <string name="error_join_room">加入房间失败</string>
+    <string name="error_make_bet">下注失败</string>
+</resources>
